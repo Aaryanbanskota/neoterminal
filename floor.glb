@@ -1,0 +1,13 @@
+const floor = await loader.loadModel('assets/models/environments/floor.glb');
+
+// Configure grid
+floor.position.y = -0.5;
+floor.receiveShadow = true;
+
+// Animate grid lines
+floor.traverse(child => {
+  if (child.isMesh && child.material.map) {
+    child.material.map.offset.y -= 0.001;
+    child.material.map.needsUpdate = true;
+  }
+});

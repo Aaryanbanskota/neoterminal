@@ -1,0 +1,16 @@
+const hud = await loader.loadModel('assets/models/devices/hud.glb');
+
+// Make screen emissive
+hud.traverse(child => {
+  if (child.name.includes('Screen')) {
+    child.material = new THREE.MeshBasicMaterial({
+      color: 0x00ff00,
+      transparent: true,
+      opacity: 0.7
+    });
+  }
+});
+
+// Position in front of camera
+hud.position.set(0, 0, -2);
+camera.add(hud); // Attach to camera

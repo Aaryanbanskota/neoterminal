@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neo Terminal Ultra</title>
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="./styles/main.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Matrix Background Canvas -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Main App Container -->
+  <div id="app-container">
+    <!-- Header Bar -->
+    <div class="header-bar">
+      <div class="logo">
+        <i class="fas fa-terminal"></i> NEO-TERMINAL v3.0
+      </div>
+      <div class="system-status">
+        <span id="cpu-load">CPU: 0%</span>
+        <span id="memory-usage">RAM: 0%</span>
+        <span id="network-status"><i class="fas fa-wifi"></i></span>
+      </div>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <div class="main-grid">
+      <!-- Quantum Computing Panel -->
+      <div class="panel quantum-panel">
+        <div class="panel-header">
+          <i class="fas fa-atom"></i> QUANTUM PROCESSOR
+        </div>
+        <div class="quantum-visualization" id="quantum-canvas"></div>
+        <div class="quantum-controls">
+          <button id="start-quantum"><i class="fas fa-play"></i> Initialize</button>
+          <button id="add-qubit"><i class="fas fa-plus"></i> Qubit</button>
+          <select id="quantum-gates">
+            <option value="h">Hadamard (H)</option>
+            <option value="x">Pauli-X</option>
+            <option value="y">Pauli-Y</option>
+            <option value="z">Pauli-Z</option>
+            <option value="cnot">CNOT</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Main Terminal -->
+      <div class="panel terminal-panel">
+        <div class="terminal-output" id="terminal-output">
+          <div class="system-message">NEO-TERMINAL v3.0 - SYSTEM INITIALIZED</div>
+          <div class="system-message">Quantum Processor: <span class="status-offline">OFFLINE</span></div>
+          <div class="system-message">Security Module: <span class="status-online">ONLINE</span></div>
+          <div class="prompt-line">> Welcome Operator. Type <span class="command-example">help</span> for commands</div>
+        </div>
+        <div class="terminal-input">
+          <span class="prompt">></span>
+          <input type="text" id="command-input" autofocus>
+          <button id="voice-control"><i class="fas fa-microphone"></i></button>
+        </div>
+      </div>
+
+      <!-- Security Panel -->
+      <div class="panel security-panel">
+        <div class="panel-header">
+          <i class="fas fa-shield-alt"></i> SECURITY CENTER
+        </div>
+        <div class="scanner-container">
+          <div class="scanner-animation" id="scanner-animation"></div>
+          <div class="scan-results" id="scan-results">
+            <div class="scan-item">Port 22: <span class="scan-status secure">Closed</span></div>
+            <div class="scan-item">Port 80: <span class="scan-status warning">Open</span></div>
+          </div>
+        </div>
+        <div class="security-controls">
+          <button id="scan-network"><i class="fas fa-network-wired"></i> Scan Network</button>
+          <button id="encrypt-file"><i class="fas fa-lock"></i> Encrypt</button>
+        </div>
+      </div>
+
+      <!-- AI Assistant Panel -->
+      <div class="panel ai-panel">
+        <div class="panel-header">
+          <i class="fas fa-robot"></i> AI ASSISTANT
+        </div>
+        <div class="ai-chat" id="ai-chat">
+          <div class="ai-message">Hello Operator. How can I assist you today?</div>
+        </div>
+        <div class="ai-input">
+          <input type="text" id="ai-query" placeholder="Ask AI...">
+          <button id="send-ai"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <div class="status-item"><i class="fas fa-clock"></i> <span id="system-clock">00:00:00</span></div>
+      <div class="status-item"><i class="fas fa-microchip"></i> <span id="cpu-temp">42°C</span></div>
+      <div class="status-item"><i class="fas fa-memory"></i> <span id="memory-free">8.2GB Free</span></div>
+      <div class="status-item" id="connection-status"><i class="fas fa-plug"></i> Secure Connection</div>
+    </div>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="./libs/three.min.js"></script>
+  <script src="./libs/tensorflow.js"></script>
+  <script src="./libs/annyang.min.js"></script>
+  <script src="./libs/web3.min.js"></script>
+  
+  <!-- Custom Modules -->
+  <script src="./modules/quantum.js"></script>
+  <script src="./modules/security.js"></script>
+  <script src="./modules/ai.js"></script>
+  <script src="./modules/voice.js"></script>
+  <script src="./modules/matrix.js"></script>
+  
+  <!-- Main Application -->
+  <script src="./main.js"></script>
+
+  <!-- Initialization Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Matrix Effect
+      new MatrixEffect('matrix-canvas');
+      
+      // Initialize Terminal
+      const terminal = new NeoTerminal({
+        outputElement: document.getElementById('terminal-output'),
+        inputElement: document.getElementById('command-input')
+      });
+      
+      // Initialize Quantum Computer
+      const quantum = new QuantumEngine('quantum-canvas');
+      
+      // Initialize AI Assistant
+      const ai = new AIChat('ai-chat', 'ai-query');
+      
+      // Initialize Voice Control
+      if (annyang) {
+        const voice = new VoiceController(terminal);
+        voice.start();
+      }
+      
+      // Start system clock
+      updateClock();
+      setInterval(updateClock, 1000);
+    });
+    
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('system-clock').textContent = 
+        now.toLocaleTimeString('en-US', {hour12: false});
+    }
+  </script>
+</body>
+</html>

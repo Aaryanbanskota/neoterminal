@@ -1,0 +1,9 @@
+const dataCenter = await loader.loadModel('assets/models/environments/data_center.glb');
+
+// Configure as background
+dataCenter.position.set(0, -1, -15);
+dataCenter.scale.set(3, 3, 3);
+
+// Add fog effect
+scene.fog = new THREE.FogExp2(0x111122, 0.02);
+scene.add(dataCenter);

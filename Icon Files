@@ -1,0 +1,18 @@
+Windows: icon.ico (256x256, 32-bit with transparency)
+
+macOS: icon.icns (1024x1024 in .icns format)
+
+Linux: linux-icons/ (PNGs in 16x16 to 512x512)
+
+# Generate icons (requires icnsutils on macOS)
+convert assets/logo.png -define icon:auto-resize=256,128,64,48,32,16 .electron/icons/icon.ico
+png2icns .electron/icons/icon.icns assets/logo_1024x1024.png
+
+# Install required plugins
+npm install @electron-forge/plugin-webpack electron-log --save-dev
+
+
+Security Hardening
+
+process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
+app.enableSandbox();

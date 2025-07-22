@@ -1,0 +1,24 @@
+const circuit = await loader.loadModel('assets/models/quantum/circuit.glb');
+
+// Animate gates
+circuit.traverse(child => {
+  if (child.name.includes('Gate')) {
+    child.userData = {
+      phase: Math.random() * Math.PI * 2,
+      speed: 0.02 + Math.random() * 0.03
+    };
+  }
+});
+
+// Animation loop
+function animateCircuit() {
+  circuit.traverse(child => {
+    if (child.userData?.phase !== undefined) {
+      child.userData.phase += child.userData.speed;
+      child.position.y = 0.1 * Math.sin(child.userData.phase);
+      child.material.emissiveIntensity = 0.3 + 0.3 * Math.sin(child.userData.phase);
+    }
+  });
+  requestAnimationFrame(animateCircuit);
+}
+animateCircuit();

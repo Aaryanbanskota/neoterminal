@@ -1,0 +1,4 @@
+# System Status Icons
+curl https://raw.githubusercontent.com/feathericons/feather/master/icons/wifi.svg > assets/icons/status/wifi.svg
+curl https://raw.githubusercontent.com/feathericons/feather/master/icons/cpu.svg > assets/icons/status/cpu.svg
+curl https://raw.githubusercontent.com/feathericons/feather/master/icons/battery.svg > assets/icons/status/battery.svg

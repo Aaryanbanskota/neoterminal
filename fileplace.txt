@@ -1,0 +1,13 @@
+assets/models/
+├── holograms/
+│   ├── terminal.glb       # Main terminal hologram
+│   └── data_cube.glb      # Floating data elements
+├── quantum/
+│   ├── qubit.glb          # Quantum sphere
+│   └── circuit.glb        # Animated circuit
+├── devices/
+│   ├── server_rack.glb    # Server visualization
+│   └── hud.glb            # Interactive HUD
+└── environments/
+    ├── data_center.glb    # Background scene
+    └── floor.glb          # Grid floor

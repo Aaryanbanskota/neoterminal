@@ -1,0 +1,3 @@
+# Hologram UI Elements
+wget https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Box/glTF-Binary/Box.glb -O assets/icons/3d/box.glb
+wget https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Sphere/glTF-Binary/Sphere.glb -O assets/icons/3d/sphere.glb

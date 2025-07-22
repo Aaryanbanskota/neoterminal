@@ -1,0 +1,30 @@
+# Create sound directory structure
+mkdir -p assets/sounds/{system,ui,quantum,security,environment}
+
+# System Sounds
+wget https://assets.mixkit.co/sfx/preview/mixkit-retro-game-emergency-alarm-1000.mp3 -O assets/sounds/system/startup.mp3
+wget https://assets.mixkit.co/sfx/preview/mixkit-computer-long-error-notification-2388.mp3 -O assets/sounds/system/shutdown.mp3
+wget https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3 -O assets/sounds/system/login.mp3
+
+# UI Sounds
+wget https://assets.mixkit.co/sfx/preview/mixkit-modern-click-tech-2581.mp3 -O assets/sounds/ui/click.mp3
+wget https://assets.mixkit.co/sfx/preview/mixkit-fast-typing-1546.mp3 -O assets/sounds/ui/typing.mp3
+wget https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3 -O assets/sounds/ui/select.mp3
+
+# Quantum Sounds
+wget https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-bleep-902.mp3 -O assets/sounds/quantum/qubit.mp3
+wget https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-sparkle-1680.mp3 -O assets/sounds/quantum/entanglement.mp3
+wget https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-echo-notification-2765.mp3 -O assets/sounds/quantum/circuit.mp3
+
+# Security Sounds
+wget https://assets.mixkit.co/sfx/preview/mixkit-security-lock-alarm-2879.mp3 -O assets/sounds/security/alert.mp3
+wget https://assets.mixkit.co/sfx/preview/mixkit-scanning-digital-document-2768.mp3 -O assets/sounds/security/scan.mp3
+wget https://assets.mixkit.co/sfx/preview/mixkit-lock-interface-click-2574.mp3 -O assets/sounds/security/lock.mp3
+
+# Environment Sounds
+wget https://assets.mixkit.co/sfx/preview/mixkit-cool-interface-click-tone-2568.mp3 -O assets/sounds/environment/hum.mp3
+wget https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-explosion-2759.mp3 -O assets/sounds/environment/glitch.mp3
+wget https://assets.mixkit.co/sfx/preview/mixkit-neon-light-flickering-2872.mp3 -O assets/sounds/environment/neon.mp3
+
+# Verify downloads
+find assets/sounds -type f -name "*.mp3" -exec file {} \; | grep "MPEG"

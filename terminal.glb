@@ -1,0 +1,17 @@
+// Load the model
+const terminal = await loader.loadModel('assets/models/holograms/terminal.glb');
+
+// Position and configure
+terminal.position.set(0, 1.5, -5);
+terminal.scale.set(0.8, 0.8, 0.8);
+
+// Add holographic effect
+terminal.traverse(child => {
+  if (child.isMesh) {
+    child.material.emissive = new THREE.Color(0x00ffff);
+    child.material.emissiveIntensity = 0.5;
+    child.material.transparent = true;
+    child.material.opacity = 0.9;
+  }
+});
+scene.add(terminal);

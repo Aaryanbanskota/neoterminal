@@ -1,0 +1,19 @@
+src/renderer/libs/
+├── three/                  # 3D Visualization
+│   ├── three.min.js
+│   └── holographic-display.js
+├── tensorflow/             # AI/ML
+│   ├── tfjs.js
+│   └── model-loader.js
+├── quantum/                # Quantum Computing
+│   ├── qrack-client.js
+│   └── circuit-builder.js
+├── voice/                  # Voice Control
+│   ├── annyang.js
+│   └── voice-processor.js
+├── crypto/                 # Blockchain/Crypto
+│   ├── web3.min.js
+│   └── ethers.js
+└── utils/                  # Utilities
+    ├── matrix-effect.js
+    └── neon-glow.js

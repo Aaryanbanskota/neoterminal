@@ -1,0 +1,21 @@
+assets/sounds/
+├── system/
+│   ├── startup.mp3     # Terminal boot sound
+│   ├── shutdown.mp3    # Power down sequence
+│   └── login.mp3       # Authentication sound
+├── ui/
+│   ├── click.mp3       # Button interactions
+│   ├── typing.mp3      # Keyboard sounds
+│   └── select.mp3      # Menu navigation
+├── quantum/
+│   ├── qubit.mp3       # Qubit state change
+│   ├── entanglement.mp3 # Quantum connection
+│   └── circuit.mp3     # Gate activation
+├── security/
+│   ├── alert.mp3       # Intrusion detection
+│   ├── scan.mp3        # Network probing
+│   └── lock.mp3        # Encryption sound
+└── environment/
+    ├── hum.mp3         # Background ambience
+    ├── glitch.mp3      # System error
+    └── neon.mp3        # Holographic flicker

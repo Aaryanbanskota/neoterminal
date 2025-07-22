@@ -1,0 +1,21 @@
+const cube = await loader.loadModel('assets/models/holograms/data_cube.glb');
+
+// Configure for floating animation
+cube.position.set(2, 1, -3);
+cube.scale.set(0.3, 0.3, 0.3);
+
+// Add pulsing effect
+cube.userData = {
+  speed: Math.random() * 0.02 + 0.01,
+  angle: 0
+};
+
+// Animation loop
+function animateCube() {
+  cube.angle += cube.userData.speed;
+  cube.position.y = 1 + Math.sin(cube.angle) * 0.3;
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
+  requestAnimationFrame(animateCube);
+}
+animateCube();

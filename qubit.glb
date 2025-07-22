@@ -1,0 +1,14 @@
+const qubit = await loader.loadModel('assets/models/quantum/qubit.glb');
+
+// Qubit state visualization (0 or 1)
+function setQubitState(qubit, state) {
+  qubit.traverse(child => {
+    if (child.isMesh) {
+      child.material.color.setHex(state === 0 ? 0xff0000 : 0x0000ff);
+      child.material.emissive.setHex(state === 0 ? 0x330000 : 0x000033);
+    }
+  });
+}
+
+// Example usage
+setQubitState(qubit, 0); // Red for |0⟩

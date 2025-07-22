@@ -1,0 +1,7 @@
+# Terminal Icons Pack (100+ icons)
+wget https://github.com/tabler/tabler-icons/releases/download/v2.47.0/tabler-icons.zip -O assets/icons/cyberpunk-icons.zip
+unzip assets/icons/cyberpunk-icons.zip -d assets/icons/cyber
+
+# Special Effects Icons
+curl https://raw.githubusercontent.com/ionic-team/ionicons/v7.2.2/src/svg/terminal-outline.svg > assets/icons/terminal.svg
+curl https://raw.githubusercontent.com/ionic-team/ionicons/v7.2.2/src/svg/scan-outline.svg > assets/icons/scan.svg

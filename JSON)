@@ -1,0 +1,3 @@
+# Loading Animations
+wget https://assets1.lottiefiles.com/packages/lf20_raiw2hpe.json -O assets/icons/animated/loading.json
+wget https://assets1.lottiefiles.com/packages/lf20_5tkzkblw.json -O assets/icons/animated/scanning.json

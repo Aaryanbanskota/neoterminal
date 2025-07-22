@@ -1,0 +1,25 @@
+{
+  "appId": "com.neoterminal.app",
+  "productName": "NeoTerminal",
+  "directories": {
+    "output": "release/${version}",
+    "buildResources": "../../assets"
+  },
+  "files": [
+    "dist/**/*",
+    "!node_modules/**/*"
+  ],
+  "win": {
+    "target": ["nsis", "portable"],
+    "icon": "../../.electron/icons/icon.ico"
+  },
+  "mac": {
+    "target": ["dmg", "zip"],
+    "category": "public.app-category.developer-tools",
+    "icon": "../../.electron/icons/icon.icns"
+  },
+  "linux": {
+    "target": ["AppImage", "deb", "rpm"],
+    "icon": "../../.electron/icons/linux-icons"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "protocol": "terminal",
+  "name": "NeoTerminal Protocol",
+  "privileges": {
+    "standard": true,
+    "secure": true,
+    "bypassCSP": true,
+    "allowServiceWorkers": true,
+    "supportFetchAPI": true
+  }
+}
